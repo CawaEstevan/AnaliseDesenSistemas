@@ -1,3 +1,4 @@
+package Sigleton;
 /* um sigleton que cria um objeto que representa a conexão com um bd */
 
 public class DBConnection{
@@ -10,7 +11,7 @@ public class DBConnection{
         this.statusConexao = 1;
     }
 
-    public static  DBConnection getInstance(){
+    public static  DBConnection getInstance(){  //verifica se o objeto já existe
         if(conexao == null){
         conexao = new DBConnection();
         }
