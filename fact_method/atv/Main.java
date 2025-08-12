@@ -10,7 +10,7 @@ public class Main {
 
         // Simula escolha do usuário
         String metodoEscolhido = "pix";
-        double valor = 250.0;
+        double valor = 1050.0;
 
         int status = pagamentos.get(metodoEscolhido).pagar(valor);
 
