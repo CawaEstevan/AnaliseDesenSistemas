@@ -1,3 +1,4 @@
+package adapter.aps;
 public class PagamentoAdapter implements INovoPagamento {
 
     private Pagamento pagamentoAntigo;
