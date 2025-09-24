@@ -1,0 +1,6 @@
+com/exemplo/proxydb/Main.class
+com/exemplo/proxydb/IDatabaseOperation.class
+com/exemplo/proxydb/entity/Produto.class
+com/exemplo/proxydb/DatabaseProxy.class
+com/exemplo/proxydb/DatabaseOperation.class
+com/exemplo/proxydb/App.class
