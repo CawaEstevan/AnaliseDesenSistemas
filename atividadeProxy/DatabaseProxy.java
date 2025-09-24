@@ -1,5 +1,3 @@
-package com.exemplo.proxydb;
-
 public class DatabaseProxy implements IDatabaseOperation {
     private final DatabaseOperation realOperation;
 
