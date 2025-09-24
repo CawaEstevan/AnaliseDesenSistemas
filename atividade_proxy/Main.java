@@ -10,7 +10,7 @@ public class Main {
         System.out.println("🧪 === INICIANDO TESTES ===\n");
         
         System.out.println("=== TESTE 1: Dados válidos ===");
-        testarOperacao("João Silva", "joao@email.com");
+        testarOperacao("Julio Silva", "julio@email.com");
         
         System.out.println("\n=== TESTE 2: Email inválido ===");
         testarOperacao("Maria Santos", "email-invalido");
@@ -19,7 +19,7 @@ public class Main {
         testarOperacao("", "pedro@email.com");
         
         System.out.println("\n=== TESTE 4: Email sem ponto ===");
-        testarOperacao("Cawa", "cawa@email");
+        testarOperacao("Cawa", "carlos@email");
         
         System.out.println("\n=== TESTE 5: Nome muito curto ===");
         testarOperacao("A", "ana@email.com");
@@ -28,7 +28,7 @@ public class Main {
         testarOperacao("Ana Costa", "ana@email.com");
         
         System.out.println("\n=== TESTE 7: Email duplicado (deve falhar) ===");
-        testarOperacao("João Santos", "joao@email.com"); // Email já existe
+        testarOperacao("Julio Santos", "julio@email.com"); // Email já existe
         
         System.out.println("\n=== TESTE 8: Dados válidos 3 ===");
         testarOperacao("Pedro Oliveira", "pedro@empresa.com.br");
