@@ -1,0 +1,4 @@
+com/atividade/proxy/Main.class
+com/atividade/proxy/UserDatabaseOperation.class
+com/atividade/proxy/DatabaseOperation.class
+com/atividade/proxy/DatabaseOperationProxy.class
