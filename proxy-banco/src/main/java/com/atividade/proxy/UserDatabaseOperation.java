@@ -16,7 +16,7 @@ public class UserDatabaseOperation implements DatabaseOperation {
 
         try {
             conn = DriverManager.getConnection(URL, USER, PASSWORD);
-            conn.setAutoCommit(false); // controle manual de transação
+            conn.setAutoCommit(false); 
 
             String sql = "INSERT INTO usuarios (nome, email) VALUES (?, ?)";
             stmt = conn.prepareStatement(sql);
@@ -24,14 +24,14 @@ public class UserDatabaseOperation implements DatabaseOperation {
             stmt.setString(2, email);
             stmt.executeUpdate();
 
-            conn.commit(); // confirma a operação
+            conn.commit(); 
             System.out.println("Usuário inserido com sucesso: " + nome);
 
         } catch (Exception e) {
             if (conn != null) {
-                conn.rollback(); // desfaz em caso de erro
+                conn.rollback(); 
             }
-            throw e; // repassa a exceção para o proxy lidar
+            throw e; 
         } finally {
             if (stmt != null) stmt.close();
             if (conn != null) conn.close();
