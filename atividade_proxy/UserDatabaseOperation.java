@@ -21,7 +21,7 @@ public class UserDatabaseOperation implements DatabaseOperation {
     
     @Override
     public boolean executeOperation() throws Exception {
-        System.out.println("💾 Iniciando operação de inserção...");
+        System.out.println(" Iniciando operação de inserção...");
         
         try {
             // Simular início de transação
@@ -73,11 +73,11 @@ public class UserDatabaseOperation implements DatabaseOperation {
         database.clear();
         emailsUsados.clear();
         nextId = 1;
-        System.out.println("🧹 Banco de dados limpo");
+        System.out.println(" Banco de dados limpo");
     }
     
     public static void mostrarUsuarios() {
-        System.out.println("\n📊 === USUÁRIOS NO BANCO ===");
+        System.out.println("\n === USUÁRIOS NO BANCO ===");
         if (database.isEmpty()) {
             System.out.println("Nenhum usuário encontrado.");
         } else {
@@ -93,7 +93,7 @@ public class UserDatabaseOperation implements DatabaseOperation {
     }
     
     public static void mostrarLog() {
-        System.out.println("\n📝 === LOG DE TRANSAÇÕES ===");
+        System.out.println("\n === LOG DE TRANSAÇÕES ===");
         for (String log : transactionLog) {
             System.out.println(log);
         }
