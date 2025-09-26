@@ -9,7 +9,7 @@ public class UserDatabaseOperation implements DatabaseOperation {
     
     private static final String URL = "jdbc:mysql://localhost:3306/atividade_proxy?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=UTF-8";
     private static final String USER = "root";
-    private static final String PASSWORD = "root";
+    private static final String PASSWORD = "123mudar";
 
     @Override
     public void insertUser(String nome, String email) throws Exception {
