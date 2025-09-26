@@ -6,11 +6,11 @@ public class Main {
         DatabaseOperation proxy = new DatabaseOperationProxy(realOp);
 
         try {
-            proxy.insertUser("João Silva", "joao@example.com");
-            proxy.insertUser("Maria Souza", "maria@example.com");
+            proxy.insertUser("Marcos", "marcos@example.com");
+            proxy.insertUser("Pedro", "pedro@example.com");
 
             // Forçando erro para testar rollback
-            proxy.insertUser("Erro", "joao@example.com"); // email repetido
+            proxy.insertUser("Erro", "marcos@example.com"); // email repetido
 
         } catch (Exception e) {
             System.err.println("Exceção capturada no Main: " + e.getMessage());
