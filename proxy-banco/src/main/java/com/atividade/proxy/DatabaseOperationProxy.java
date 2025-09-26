@@ -19,7 +19,7 @@ public class DatabaseOperationProxy implements DatabaseOperation {
 
         } catch (Exception e) {
             System.err.println("Erro ao inserir usuário: " + e.getMessage());
-            // rollback já é feito dentro do UserDatabaseOperation
+       
         }
     }
 }
