@@ -22,7 +22,7 @@ public class DatabaseOperationProxy implements DatabaseOperation {
         try {
             System.out.println("=== PROXY: Iniciando validação ===");
             
-          
+            // Validações no proxy
             if (nome == null || nome.isBlank()) {
                 throw new IllegalArgumentException("Nome não pode ser vazio ou nulo");
             }
@@ -37,14 +37,15 @@ public class DatabaseOperationProxy implements DatabaseOperation {
             
             System.out.println("PROXY: Validação passou - Nome: " + nome + ", Email: " + email);
             
-      
+            
             System.out.println("PROXY: Obtendo conexão para gerenciar transação...");
             conn = realOperation.getConnection();
             
+          
             System.out.println("PROXY: Executando operação real...");
-            realOperation.insertUser(nome, email);
+            realOperation.insertUser(conn, nome, email);
             
-
+           
             conn.commit();
             System.out.println("PROXY: COMMIT realizado com sucesso!");
             System.out.println("PROXY: Usuário inserido: " + nome + " (" + email + ")");
@@ -63,11 +64,11 @@ public class DatabaseOperationProxy implements DatabaseOperation {
                 }
             }
             
-           
+  
             throw new RuntimeException("Operação falhou e foi revertida pelo proxy: " + e.getMessage(), e);
             
         } finally {
-            
+           
             if (conn != null) {
                 try {
                     conn.close();

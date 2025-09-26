@@ -22,8 +22,11 @@ public class UserDatabaseOperation implements DatabaseOperation {
 
     @Override
     public void insertUser(String nome, String email) throws Exception {
-      
-        Connection conn = getConnection();
+        throw new UnsupportedOperationException("Use insertUser(Connection, String, String) instead");
+    }
+    
+    // Novo método que recebe a conexão como parâmetro
+    public void insertUser(Connection conn, String nome, String email) throws Exception {
         PreparedStatement stmt = null;
 
         try {
@@ -34,7 +37,6 @@ public class UserDatabaseOperation implements DatabaseOperation {
             
             int rowsAffected = stmt.executeUpdate();
             System.out.println("Operação executada - Linhas afetadas: " + rowsAffected);
-        
 
         } finally {
             if (stmt != null) {
@@ -45,7 +47,6 @@ public class UserDatabaseOperation implements DatabaseOperation {
                     System.out.println("Erro ao fechar PreparedStatement: " + e.getMessage());
                 }
             }
-           
         }
     }
 }
