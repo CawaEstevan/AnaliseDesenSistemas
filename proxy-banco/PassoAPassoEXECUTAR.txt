@@ -1,0 +1,26 @@
+# Executar MySQL no Docker
+docker run --name mysql-proxy \
+  -e MYSQL_ROOT_PASSWORD=123mudar \
+  -e MYSQL_DATABASE=atividade_proxy \
+  -p 3306:3306 \
+  -d mysql:8.0
+
+# Aguardar inicialização
+sleep 10
+
+# Criar tabela
+docker exec -i mysql-proxy mysql -u root -p123mudar atividade_proxy << EOF
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL
+);
+EOF
+
+docker exec -it mysql-proxy mysql -u root -p123mudar -e "SHOW DATABASES;"
+
+docker ps
+
+mvn clean compile exec:java
+
+docker exec -it mysql-proxy mysql -u root -p123mudar atividade_proxy -e "SELECT * FROM usuarios;"
